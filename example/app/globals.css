@@ -1,0 +1,181 @@
+/* Match your site here: brand color, font and corner radius flow through every element below */
+:root {
+  --brand: #2f6b3a;
+  --brand-ink: #ffffff;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --radius: 10px;
+
+  --ink: #1d1d1b;
+  --muted: #66665f;
+  --paper: #f5f5f0;
+  --card: #ffffff;
+  --line: #d9d9d2;
+  --error: #b3261e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.intro h1 {
+  margin: 0 0 4px;
+  font-size: 1.75rem;
+}
+
+.intro p {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+label > span {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+label.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) / 2);
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: calc(var(--radius) / 2);
+  border: 1px solid var(--brand);
+  background: var(--brand);
+  color: var(--brand-ink);
+  cursor: pointer;
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--brand);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.estimate {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: calc(var(--radius) / 2);
+  background: var(--paper);
+}
+
+.estimate strong {
+  font-size: 1.5rem;
+}
+
+.lines {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.lines td {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.lines td:last-child {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.lines tr.total td {
+  font-weight: 700;
+  border-bottom: 0;
+}
+
+.error {
+  color: var(--error);
+  margin: 0 0 12px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Honeypot: off screen for people, visible to bots that fill every field */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
